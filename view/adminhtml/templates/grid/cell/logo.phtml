@@ -1,0 +1,14 @@
+<?php
+/**
+ * Grid cell template: displays a small thumbnail for the logo (if exists)
+ *
+ * Note: the grid column uses this bodyTmpl.
+ */
+
+/** @var $block \Magento\Framework\View\Element\Template */
+$logo = $block->getData('logo');
+if ($logo) :
+    $mediaUrl = $block->getUrl('pub/media') . ltrim($logo, '/');
+?>
+<img src="<?= $this->escapeUrl($mediaUrl) ?>" alt="<?= $this->escapeHtml($block->getData('name')) ?>" style="max-width:80px; max-height:40px;" />
+<?php endif; ?>

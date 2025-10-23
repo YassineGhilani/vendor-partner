@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!-- UI Component Form for creating/editing Partner -->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
+    <dataSource name="vendor_partners_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Vendor\Partners\Ui\DataProvider\PartnerDataProvider</argument>
+            <argument name="name" xsi:type="string">vendor_partners_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">partner_id</argument>
+            <argument name="requestFieldName" xsi:type="string">partner_id</argument>
+            <argument name="collectionFactory" xsi:type="object">Vendor\Partners\Model\ResourceModel\Partner\CollectionFactory</argument>
+        </argument>
+    </dataSource>
+
+    <fieldset name="general">
+        <settings>
+            <label translate="true">General</label>
+        </settings>
+
+        <field name="partner_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">hidden</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Name</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="validation" xsi:type="array"><item name="required-entry" xsi:type="boolean">true</item></item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="logo">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Logo</item>
+                    <item name="formElement" xsi:type="string">imageUploader</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/file-uploader</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="vendor_partners/partner/upload"/>
+                    </item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="url">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">URL</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="start_date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Start Date</item>
+                    <item name="dataType" xsi:type="string">date</item>
+                    <item name="formElement" xsi:type="string">date</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="is_active">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Is Active</item>
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+
+    <settings>
+        <submitUrl path="vendor_partners/partner/save"/>
+    </settings>
+</form>

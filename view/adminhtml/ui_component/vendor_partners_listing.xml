@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!-- UI Component Listing (Grid) -->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
+    <dataSource name="vendor_partners_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Vendor\Partners\Ui\DataProvider\PartnerDataProvider</argument>
+            <argument name="name" xsi:type="string">vendor_partners_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">partner_id</argument>
+            <argument name="requestFieldName" xsi:type="string">partner_id</argument>
+            <argument name="collectionFactory" xsi:type="object">Vendor\Partners\Model\ResourceModel\Partner\CollectionFactory</argument>
+        </argument>
+    </dataSource>
+
+    <columns name="vendor_partners_columns">
+        <column name="partner_id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+            </settings>
+        </column>
+        <column name="name">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Name</label>
+            </settings>
+        </column>
+        <column name="logo">
+            <settings>
+                <label translate="true">Logo</label>
+                <bodyTmpl>Vendor_Partners/grid/cell/logo</bodyTmpl>
+            </settings>
+        </column>
+        <column name="url">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">URL</label>
+            </settings>
+        </column>
+        <column name="start_date">
+            <settings>
+                <filter>dateRange</filter>
+                <label translate="true">Start Date</label>
+            </settings>
+        </column>
+        <column name="is_active">
+            <settings>
+                <filter>select</filter>
+                <dataType>select</dataType>
+                <label translate="true">Active</label>
+            </settings>
+        </column>
+        <actionsColumn name="actions" class="Magento\Ui\Component\Listing\Columns\Actions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">partner_id</item>
+                </item>
+            </argument>
+        </actionsColumn>
+    </columns>
+
+    <listingToolbar name="listing_top">
+        <buttons name="add">
+            <button name="add_new">
+                <settings>
+                    <label translate="true">Add New Partner</label>
+                    <class>primary</class>
+                    <url path="vendor_partners/partner/new"/>
+                </settings>
+            </button>
+        </buttons>
+    </listingToolbar>
+</listing>

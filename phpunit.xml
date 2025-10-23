@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<phpunit bootstrap="vendor/autoload.php"
+         colors="true"
+         backupGlobals="false"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="Vendor_Partners Unit Tests">
+            <directory>Test/Unit</directory>
+        </testsuite>
+        <testsuite name="Vendor_Partners Integration Tests">
+            <directory>Test/Integration</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

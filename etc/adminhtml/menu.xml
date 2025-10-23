@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- Adds menu item under Marketing > Partners -->
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:Menu/etc/menu.xsd">
+    <add id="Vendor_Partners::partners"
+         title="Partners"
+         module="Vendor_Partners"
+         sortOrder="80"
+         parent="Magento_Backend::marketing"
+         resource="Vendor_Partners::partners"/>
+</menu>

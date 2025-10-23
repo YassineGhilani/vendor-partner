@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- Access control list for the admin menu -->
+<acl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <resources>
+        <resource id="Magento_Backend::admin">
+            <resource id="Magento_Backend::marketing">
+                <resource id="Vendor_Partners::partners" title="Manage Partners" sortOrder="10"/>
+            </resource>
+        </resource>
+    </resources>
+</acl>

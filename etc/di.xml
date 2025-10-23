@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!-- Dependency injection preferences -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Use concrete repository for the API interface -->
+    <preference for="Vendor\Partners\Api\PartnerRepositoryInterface" type="Vendor\Partners\Model\PartnerRepository"/>
+</config>
